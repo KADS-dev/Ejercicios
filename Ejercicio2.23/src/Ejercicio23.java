@@ -1,4 +1,4 @@
-/*
+55/*
 Pedir 5 numeros e indicar si alguno es multiplo de 3.
  */
 
