@@ -20,7 +20,7 @@ public class Ejercicio1 {
     public static void main(String[] args){
 
         int suma, i, j;
-        
+
         for(i = 1; i < 4; i++){
 
             for(j = 3; j>0; j--){
