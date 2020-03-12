@@ -10,34 +10,37 @@ public class Ejercicio6 {
         Scanner sc = new Scanner(System.in);
         int numero;
         int contador = 0;
+        int cocienteCero = 0;
 
         System.out.println("Ingresa un numero:");
         numero = sc.nextInt();
 
-        for(int i =1; i < (numero+1); i++){
-            /*
-            Todo numero primo tiene que cumplir con una de las siguientes condiciones:
-            1°- (4*k +1)
-            2°- (4*k -1)
-            3°- (2)
+        for(int i =1; i < numero+1; i++) {
 
-            */
 
-            if (((4*i) -1) < numero){
-                contador++;
-                System.out.println(((4*i) +1));
+
+            for (int j = 2; j < i+1; j++) {
+
+
+                System.out.println("j = " + j);
+
+            //SE DIVIDE EL NUERO ACTUAL "i" ENTRE LOS NUMEROS ANTERIORES A EL DESDE EL 2, SI LA DIVISION DA 0, LA VAR. COCIENTE
+                // SUMA 1
+                if ((i % j) == 0) {
+                    cocienteCero++;
+                }
+
             }
-            if (((4*i) +1) < numero){
-                contador++;
-                System.out.println(((4*i) -1));
+
+            //CUANDO SOLO SE DA UNA VEZ EL RESULTADO 0 DEL MODULO, SIGNIFICA QUE ES UN NUMERO PRIMO EL QUE SE DIVIDIO
+            if (cocienteCero == 1) {
+                ++contador;
             }
-            if (i == 2){
-                contador++;
-                System.out.println(2);
-            }
+            //REINICIO EL CONTADOR DE MODULO A 0 PARA QUE HAGA LA COPROBACION LIMPIA EN LA PROXIMA VUELTA
+            cocienteCero = 0;
+
         }
-
-        System.out.println("Numeros primos: " + contador + ".");
+             System.out.println("Numeros primos: " + contador + ".");
     }
 
 }
